@@ -15,7 +15,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 WORKDIR /build
 COPY checksum checksum
 ADD https://www.iro.umontreal.ca/~gambit/download/gambit/v4.9/source/gambit-v4_9_3.tgz gambit.tgz
-ADD https://github.com/vyzo/gerbil/archive/v0.15.1.tar.gz gerbil.tar.gz
+ADD https://github.com/vyzo/gerbil/archive/v0.16.tar.gz gerbil.tar.gz
 RUN sha256sum gambit.tgz gerbil.tar.gz && sha256sum -c checksum
 RUN mkdir gambit && tar -C gambit --strip-components 1 -xf gambit.tgz
 RUN mkdir gerbil && tar -C gerbil --strip-components 1 -xf gerbil.tar.gz
